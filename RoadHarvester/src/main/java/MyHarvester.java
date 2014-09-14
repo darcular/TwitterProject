@@ -104,7 +104,7 @@ public class MyHarvester {
 
                     JsonObject harvesterInfo = new JsonObject();
                     harvesterInfo.addProperty("method", "search");
-                    harvesterInfo.addProperty("catalog", "road");
+                    harvesterInfo.addProperty("catalog", "street");
                     harvesterInfo.addProperty("name", streetName);
                     JsonObject geo = new JsonObject();
                     geo.addProperty("type", "round_area");
@@ -116,7 +116,7 @@ public class MyHarvester {
                     try{
                         dbClient.save(tweet);
                     }catch (Exception e){
-                        System.out.println("duplicated tweets occurs. Discard"+ status.getId());
+//                        System.out.println("duplicated tweets occurs. Discard"+ status.getId());
                         numOfConflict++;
                     }
                     if(i==status_list.size()-1){
@@ -137,8 +137,8 @@ public class MyHarvester {
 //                    output.close();
                     System.out.println("Got:"+status_list.size()+" tweets");
                     System.out.println("Conflict:"+ numOfConflict);
-                    Thread.sleep(2500);
-                    if(status_list.size()<99){
+                    Thread.sleep(2100);
+                    if(status_list.size()<95){
                         end = true;
                     }
                 } catch (Exception e) {
