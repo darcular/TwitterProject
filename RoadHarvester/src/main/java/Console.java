@@ -43,7 +43,7 @@ public class Console {
         /**
          * Start travels points
          */
-        while(true) {
+//        while(true) {
             log("Start harvest streets in " + region);
             //each road
             int k = -1;
@@ -80,9 +80,8 @@ public class Console {
                 }
             }
             System.out.println("Auto finished harvesting streets in " + region);
-            log("Auto finished harvesting streets in " + region
-            );
-        }
+            log("Auto finished harvesting streets in " + region);
+//        }
     }
 
     public static Double getDistance(Double lat1, Double lon1, Double lat2, Double lon2){
