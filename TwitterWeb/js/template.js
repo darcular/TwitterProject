@@ -1,0 +1,3 @@
+$(function() {
+    $('#stacked-menu').metisMenu();
+});

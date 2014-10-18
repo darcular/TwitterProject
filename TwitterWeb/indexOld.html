@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Twitter & Transport</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/morris.css"/>
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css"/>
+    <!--for bootstrap tab addon-->
+    <script src="lib/jquery-1.11.1.js"></script>
+    <!--morris-->
+    <script src="lib/morris/raphael-min.js"></script>
+    <script src="lib/morris/morris.min.js"></script>
+    <!--google map lib-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+</head>
+<body onload="index_main();">
+<!-- Navigation -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Twitter & Transport</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Help</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Sidebar -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1 sidebar">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#OverView" data-toggle="tab">Over View</a></li>
+                <li ><a href="#StatisticView" data-toggle="tab" id="dd">Statistic View</a></li>
+                <li><a href="#RealTime" data-toggle="tab">Real Time</a></li>
+            </ul>
+        </div>
+        <div class="col-md-11 col-md-offset-1 main">
+            <div class="tab-content">
+                <div class="tab-pane active" id="OverView">
+
+                </div>
+                <div class="tab-pane" id="StatisticView">
+                    <div class="col-md-10" id="StatisticView_mid">
+                        <div id="areachart" ></div>
+                        <div id="map_canvas" style="width: 100% ; height: 600px"></div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <p>Select a Date</p>
+                            <div class="input-group date form_date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" id="datepicker">
+                                <input id="dateInput" class="form-control" size="16" type="text" value="" readonly>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                            <input type="hidden" id="dtp_input2" value="" /><br/>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="RealTime">
+                    <p>What up girl, this is Section C.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!--bootstrap core script-->
+    <script src="lib/bootstrap.min.js"></script>
+    <!--time picker-->
+    <script src="lib/bootstrap-datetimepicker.js"></script>
+    <!--custom js-->
+    <script src="js/index.js"></script>
+</body>
+</html>

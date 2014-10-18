@@ -25,7 +25,9 @@ public class Processor {
 
         retrieveMainStreetInfo("PSMA_MainRoad_West.json", roadInfos);
 
-        retrieveMainStreetInfo("PSMA_MainRoad_SourceEast.json", roadInfos);
+        retrieveMainStreetInfo("PSMA_Maribyrnong.json", roadInfos);
+
+        retrieveMainStreetInfo("PSMA_Road_InnerSourth.json", roadInfos);
 
         retrieveMainStreetInfo("PSMA_Road_InnerEast.json", roadInfos);
 
@@ -43,7 +45,12 @@ public class Processor {
         JsonArray features = jsonObject.getAsJsonArray("features");
         for (JsonElement feature : features){
             String streetName = feature.getAsJsonObject().getAsJsonObject("properties").get("full_name").getAsString();
-            if(streetName.equals("CITYLINK") || streetName.equals("WEST GATE FREEWAY") || streetName.equals("EASTERN FREEWAY") || streetName.equals("MONASH FREEWAY")){
+            if(streetName.equals("CITYLINK") || streetName.equals("WEST GATE FREEWAY")
+                    || streetName.equals("EASTERN FREEWAY") || streetName.equals("MONASH FREEWAY")
+                    || streetName.equals("DANDENONG ROAD") || streetName.equals("NEPEAN HIGHWAY") || streetName.equals("BRIGHTON ROAD") || streetName.equals("BARKERS ROAD")
+                    || streetName.equals("VICTORIA STREET") || streetName.equals("FOOTSCRAY ROAD") || streetName.equals("DYNON ROAD") || streetName.equals("MOUNT ALEXANDER ROAD")
+                    || streetName.equals("FLEMINGTON ROAD") || streetName.equals("ROYAL PARADE") || streetName.equals("PEEL STREET") || streetName.equals("ELIZABETH STREET")
+                    || streetName.equals("BARKLY STREET") || streetName.equals("SUNSHINE ROAD") || streetName.equals("BUCKLEY STREET") || streetName.equals("NAPIER STREET")){
                 JsonObject roadInfo = new JsonObject();
                 JsonArray roadCoordinates = new JsonArray();
                 JsonArray coordinatesArray = feature.getAsJsonObject().getAsJsonObject("geometry").getAsJsonArray("coordinates");
