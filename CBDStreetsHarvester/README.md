@@ -7,4 +7,4 @@ CBDStreetsHarvester
 
 ##Description
 
-This harvester aim to collect tweets exactly on streets in Melbourne CBD. A Json file provided by PSMA_Preprocessor helps to do this targed harvesting. 
+This harvester aim to collect historical tweets exactly on streets in Melbourne CBD. A Json file provided by PSMA_Preprocessor helps to do this targed harvesting. 
