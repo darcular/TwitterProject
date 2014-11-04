@@ -22,17 +22,17 @@ There are four Twitter Harvesters, one PSMA data preprocessor and one WebService
 ##MelbourneHarvester
 This application is used for harvesting historical tweets data from Twitter RESTful API.
 - Install via command: $ cd MelbourneHarvester/ && mvn clean package
-- Launch via command: $ java -jar run-MelbourneHarvester-1.0-SNAPSHOT.jar <IP of database> <index(optional)>
+- Launch via command: $ java -jar run-MelbourneHarvester-1.0-SNAPSHOT.jar (IP of database) (index(optional))
 - Two log files will be created after first start. The log can trace the index for harvester recovery
 
 ##CBDStreetsHarvester
 - Install via command: $ cd CBDStreetsHarvester/ && mvn clean package
-- Launch via command: $ java -jar run-RoadHarvester-1.0-SNAPSHOT.jar <IP of database> <streetIndex(optional)>
+- Launch via command: $ java -jar run-RoadHarvester-1.0-SNAPSHOT.jar (IP of database) (streetIndex(optional))
 - Two log files will be created after first start. The log can trace the index for harvester recovery
 
 ##MainHighwayHarvester
 - Install via command: $ cd MainHighwayHarvester/ && mvn clean package
-- Launch via command: $ java -jar run-MainStreetHavester-1.0-SNAPSHOT.jar <IP of database> <streetIndex(optional)>
+- Launch via command: $ java -jar run-MainStreetHavester-1.0-SNAPSHOT.jar (IP of database) (streetIndex(optional))
 - Two log files will be created after first start. The log can trace the index for harvester recovery
 
 ##RealTimeHarvester
