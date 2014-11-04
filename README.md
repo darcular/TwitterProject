@@ -14,14 +14,41 @@ For installing and launching these system components, you will need to use these
 - JDK 1.7 or above
 - Tomcat7 or above
 - Maven
+- CouchDB
 
 ##Directory Structure
 There are four Twitter Harvesters, one PSMA data preprocessor and one WebService in this directory. All these applications are managed respectively by maven and each sub-directory contains a ReadMe file for the details of that application.
 
-##Melbourne Harvester
+##MelbourneHarvester
 This application is used for harvesting historical tweets data from Twitter RESTful API.
-- Install via command: <code>$ cd MelbourneHarvester/ && mvn clean package</code>
-- Launch via command: 
+- Install via command: $ cd MelbourneHarvester/ && mvn clean package
+- Launch via command: $ java -jar Melbourne_Harvester.jar <IP of database> <index(optional)>
+- Two log files will be created after first start. The log can trace the index for harvester recovery
+
+##CBDStreetsHarvester
+- Install via command: $ cd CBDStreetsHarvester/ && mvn clean package
+- Launch via command: $ java -jar run-RoadHarvester-1.0-SNAPSHOT.jar <IP of database> <streetIndex(optional)>
+- Two log files will be created after first start. The log can trace the index for harvester recovery
+
+##MainHighwayHarvester
+- Install via command: $ cd MainHighwayHarvester/ && mvn clean package
+- Launch via command: $ java -jar run-MainStreetHavester-1.0-SNAPSHOT.jar <IP of database> <streetIndex(optional)>
+- Two log files will be created after first start. The log can trace the index for harvester recovery
+
+##RealTimeHarvester
+- Install via command: $ cd MainHighwayHarvester/ && mvn clean package
+- Launch via command: $ java -jar run-realtimeTweets-1.0-SNAPSHOT.jar
+- I hardcode this harvester to send data to a tomcat7 server at the same host (127.0.0.1:8080). So the web server and this harvester need to be launched at the same server (order independent)
+
+##WebService
+- Install via command: $ cd WebService/ && mvn clean package
+- Launch: Move the packaged web.war file to your the webapp/ folder under your tomcat7 directory. Launch your tomcat, by default the index page can be accessed at http://localhost:8080/web
+ 
+
+
+
+
+
 
 
 
