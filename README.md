@@ -26,16 +26,19 @@ This application is used for harvesting historical tweets data from Twitter REST
 - Two log files will be created after first start. The log can trace the index for harvester recovery
 
 ##CBDStreetsHarvester
+This harvester is used for harvesting historical tweets data exactly on streets in Melbourne CBD
 - Install via command: $ cd CBDStreetsHarvester/ && mvn clean package
 - Launch via command: $ java -jar run-RoadHarvester-1.0-SNAPSHOT.jar (IP of database) (streetIndex(optional))
 - Two log files will be created after first start. The log can trace the index for harvester recovery
 
 ##MainHighwayHarvester
+This harvester is used for harvesting historical tweets data exactly on several main streets/highways in Melbourne
 - Install via command: $ cd MainHighwayHarvester/ && mvn clean package
 - Launch via command: $ java -jar run-MainStreetHavester-1.0-SNAPSHOT.jar (IP of database) (streetIndex(optional))
 - Two log files will be created after first start. The log can trace the index for harvester recovery
 
 ##RealTimeHarvester
+A real time tweets harvester monitoring the whole Melbourne city
 - Install via command: $ cd MainHighwayHarvester/ && mvn clean package
 - Launch via command: $ java -jar run-realtimeTweets-1.0-SNAPSHOT.jar
 - I hardcode this harvester to send data to a tomcat7 server at the same host (127.0.0.1:8080). So the web server and this harvester need to be launched at the same server (order independent)
@@ -45,6 +48,7 @@ This application is used for harvesting historical tweets data from Twitter REST
 - Launch: Move the packaged web.war file to your the webapp/ folder under your tomcat7 directory. Launch your tomcat, by default the index page can be accessed at http://localhost:8080/web
  
 ##PSMA_Preprocessor
+Reading PSMA data, retrieving geographic information and producing feed(in json) for Streets Harvester
 - Install via command: $ cd PSMA_Preprocessor/ && mvn clean package
 - This application is used to read PSMA data and produce a metadata file as an input for Streets Harvester. For now, I hardcode the input file path. It will be more flexible in the future.
 
