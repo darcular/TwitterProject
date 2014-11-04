@@ -44,6 +44,9 @@ This application is used for harvesting historical tweets data from Twitter REST
 - Install via command: $ cd WebService/ && mvn clean package
 - Launch: Move the packaged web.war file to your the webapp/ folder under your tomcat7 directory. Launch your tomcat, by default the index page can be accessed at http://localhost:8080/web
  
+##PSMA_Preprocessor
+- Install via command: $ cd PSMA_Preprocessor/ && mvn clean package
+- This application is used to read PSMA data and produce a metadata file as an input for Streets Harvester. For now, I hardcode the input file path. It will be more flexible in the future.
 
 
 
