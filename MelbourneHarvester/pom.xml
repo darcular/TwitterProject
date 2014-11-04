@@ -4,12 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>yikaig</groupId>
-    <artifactId>TwitterHarvester</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>MelbourneHarvester</artifactId>
+    <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>../RoadHarvester</module>
-    </modules>
 
     <dependencies>
         <dependency>
@@ -36,18 +33,6 @@
             </resource>
         </resources>
         <plugins>
-            <!--     <plugin>
-                   <groupId>org.apache.maven.plugins</groupId>
-                   <artifactId>maven-jar-plugin</artifactId>
-                   <configuration>
-                     <archive>
-                       <manifest>
-                         <addClasspath>true</addClasspath>
-                         <mainClass>main.HelloWorld</mainClass>
-                       </manifest>
-                     </archive>
-                   </configuration>
-                 </plugin> -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
@@ -55,7 +40,6 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -80,5 +64,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
