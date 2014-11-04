@@ -6,4 +6,4 @@ MainHighwayHarvester
  
 ##Description
 
-This harvester aim to collect tweets exactly on several main streets in Melbourne(e.g. City Link, West Gate Bridge, Eastern Freeway, Monash Freeway, Nepean Highway, CBD). A Json file provided by PSMA_Preprocessor helps to do this targed harvesting. 
+This harvester aim to collect historical tweets exactly on several main streets in Melbourne(e.g. City Link, West Gate Bridge, Eastern Freeway, Monash Freeway, Nepean Highway, CBD). A Json file provided by PSMA_Preprocessor helps to do this targed harvesting. 
