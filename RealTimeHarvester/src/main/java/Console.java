@@ -22,10 +22,10 @@ public class Console {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true);
         cb.setJSONStoreEnabled(true);
-//        cb.setOAuthConsumerKey("bAPV3ZNXqQ6umXAWk26VlNcVI");
-//        cb.setOAuthConsumerSecret("lIirhcXtfL4tt1Y5t0Qom64c1Yx1Y8IMmfNRxULQoPgRW5oVEV");
-//        cb.setOAuthAccessToken("2467677446-8qg673tMPsMdJqrJ4FBUm3EzKADd6XPqXhLQJid");
-//        cb.setOAuthAccessTokenSecret("Bw0NcU37LIsGmoJJflDfY6t4lRyfKl74zN4FAZm234Tyl");
+        cb.setOAuthConsumerKey("WbOlRQ57jyp9vnvb5ADLH5bTR");
+        cb.setOAuthConsumerSecret("VwtIz3DtPcxFhYrk0PuP9yoldyz9Da9Ej6FzHTtNPyHJDNXNLW");
+        cb.setOAuthAccessToken("2467677446-WNTeaJVNyIvgl7aWhyOanh1sXX0PsN7hOww9kfu");
+        cb.setOAuthAccessTokenSecret("DU8kRPStao0lFzkGKNqYlGeojs34lPyttOh4R0dbU5HdW");
 
         TwitterStream twitterStream = new TwitterStreamFactory(cb.build()).getInstance();
         StatusListener listener = new MyListener();
