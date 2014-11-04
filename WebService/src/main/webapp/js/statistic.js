@@ -71,8 +71,6 @@ function statistic_main(){
     getStreetsDataByDate(default_date, default_dateEnd);
 
     document.getElementById("updateMarkers").addEventListener("click", updateMarkers);
-
-
 }
 
 var onStreetReady = false;
@@ -100,11 +98,15 @@ function getStreetsDataByDate(dateStart, dateEnd){
                 var value = rows[i].value;
                 var coordinates = value[0];
                 var options = {
-                    position: new google.maps.LatLng(coordinates[0], coordinates[1]),
-                    icon: circle
+                    position: new google.maps.LatLng(coordinates[0], coordinates[1])
                 };
+                if(value[3] == false)
+                    options.icon = circle;
+                else
+                    options.icon = circleGreen;
                 var marker = new google.maps.Marker(options);
                 marker.time = rows[i].key;
+                marker.isTrafficRelated = value[3];
                 addlistenerToMarker(marker, rows[i], map);
                 markers.push(marker);
 
@@ -118,8 +120,8 @@ function getStreetsDataByDate(dateStart, dateEnd){
                 dataArray[i].onStreet = counter[i];
             }
             onStreetReady = true;
-            drawCharts(dataArray);
             updateMarkers();
+            drawCharts(dataArray);
         },
         error : function(e){
             console.log(e);
@@ -163,7 +165,7 @@ function drawCharts(dataArray){
         ykeys: ['onStreet', 'onCity'],
         lineColors: ['Blue', 'HotPink'],
         parseTime: false,
-        labels: ['<b>Tweets on main streets</b>', '<b>Traffic relevant tweets</b>']
+        labels: ['<b>Tweets on main streets</b>', '<b>Traffic relevant tweets in city</b>']
     });
     prepareChartData();
     drawColumnChart();
@@ -212,21 +214,29 @@ function addlistenerToMarker(marker, row, map){
             dataType: 'jsonp',
             success: function(data) {
                 var date = new Date(data.created_at);
-//                date.setTime(date.getTime() + (new Date()).getTimezoneOffset()*60*1000 );
-                var content = 'Created at: ' + date + '</br>' + 'Text: ' + data.text;
+                var user = data.user;
+                var imageUrl = user.profile_background_image_url;
+                var userURL = "https://twitter.com/" + user.screen_name;
+                var profileImage = '<image src="'+ imageUrl +'" height="42" width="42">';
+                var content = profileImage + '</br>' +'Created at: ' + date + '</br>' + 'User: ' + '<a href ="'+userURL+'" target="_blank">' + user.name + '</a>' +'</br>' + 'Text: ' + data.text;
                 var infowindow = new google.maps.InfoWindow({content:content, title:"Context"});
-                if(!isInfoWindowOpen(infowindow))
-                    infowindow.open(map, marker);
-                else
-                    infowindow.close();
+                if(marker.infowindow != undefined && isInfoWindowOpen(marker.infowindow))
+                    marker.infowindow.close();
+                marker.infowindow = infowindow;
+                marker.infowindow.open(map, marker);
             },
             error : function(e){
                 console.log(e);
             }
         });
     });
-    google.maps.event.addListener(marker, "mouseover", function (e) { marker.setIcon(circle2); });
-    google.maps.event.addListener(marker, "mouseout", function (e) { marker.setIcon(circle); });
+    if(marker.isTrafficRelated == false){
+        google.maps.event.addListener(marker, "mouseover", function (e) { marker.setIcon(circle2); });
+        google.maps.event.addListener(marker, "mouseout", function (e) { marker.setIcon(circle); });
+    }else{
+        google.maps.event.addListener(marker, "mouseover", function (e) { marker.setIcon(circleGreen2); });
+        google.maps.event.addListener(marker, "mouseout", function (e) { marker.setIcon(circleGreen); });
+    }
 }
 
 function updatePage(){
@@ -272,6 +282,24 @@ var circle2 ={
     fillOpacity: 1.2,
     scale: 6.5,
     strokeColor: 'blue',
+    strokeWeight: 1
+};
+
+var circleGreen ={
+    path: google.maps.SymbolPath.CIRCLE,
+    fillColor: 'green',
+    fillOpacity: 0.9,
+    scale: 3,
+    strokeColor: 'green',
+    strokeWeight: 1
+};
+
+var circleGreen2 ={
+    path: google.maps.SymbolPath.CIRCLE,
+    fillColor: 'green',
+    fillOpacity: 0.9,
+    scale: 6.5,
+    strokeColor: 'green',
     strokeWeight: 1
 };
 
@@ -551,3 +579,9 @@ function countNum(dataObj, hour){
     else
         dataObj.data[hour]+=1
 }
+
+function isInfoWindowOpen(infoWindow){
+    var map = infoWindow.getMap();
+    return (map !== null && typeof map !== "undefined");
+}
+

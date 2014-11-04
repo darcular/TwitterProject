@@ -1,5 +1,5 @@
 $(function() {
-    $('#stacked-menu').metisMenu();
+    $('#stacked-menu').metisMenu({toggle: false});
 });
 
 Number.prototype.padLeft = function(base,chr){

@@ -32,9 +32,9 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Help</a></li>
+                <li><a href="https://github.com/darcular/TwitterProject" target="_blank"><span class="fa fa-github"></span> GitHub</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100005320831199" target="_blank"><span class="glyphicon glyphicon-user"></span> Author</a></li>
+                <li><a href="index.html#help" target="_blank"><span class="fa fa-question"></span> Help</a></li>
             </ul>
         </div>
     </div>
@@ -45,11 +45,11 @@
         <!-- bar -->
         <div class="col-md-3 sidebar navbar">
             <ul class="nav nav-sidebar" id = "stacked-menu">
-                <li><a href="/"><span class="fa fa-home fa-fw"></span> Overview</a></li>
+                <li><a href="index.html"><span class="fa fa-home fa-fw"></span> Overview</a></li>
                 <li class="active">
                     <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Statistic View<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li class="active"><a href="statistic_date.html">View Date</a></li>
+                        <li class="active"><a href="statistic_date.html"><span style="color:orange;">View Date</span></a></li>
                         <li><a href="statistic_dayOfWeek.html">VIew Day of Week</a></li>
                     </ul>
                 </li>
@@ -69,6 +69,7 @@
                     </div>
                     <div class="panel-body" style="padding: 0px;">
                         <div id="map_canvas" style="width: 100% ; height: 450px"></div>
+                        <div id="legend" style="text-align: center"><span style="color: crimson">Red Markers</span>: Traffic Irrelevant tweets on streets. <span style="color: green">Green Markers</span>: Traffic Relevant tweets on streets.</div>
                     </div>
                 </div>
                 <!--line-->
@@ -115,16 +116,16 @@
                             <div id="pieChart"></div>
                         </div>
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <i class="fa fa-pie-chart"></i> Percantage Change
-                            <div class="pull-right panel-label">
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div id="areaChart"></div>
-                        </div>
-                    </div>
+                    <!--<div class="panel panel-default">-->
+                        <!--<div class="panel-heading">-->
+                            <!--<i class="fa fa-pie-chart"></i> Percantage Change-->
+                            <!--<div class="pull-right panel-label">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="panel-body">-->
+                            <!--<div id="areaChart"></div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                 </div>
             </div>
             <div class="col-md-4" id="selectionBar">
