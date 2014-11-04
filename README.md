@@ -44,7 +44,7 @@ A real time tweets harvester monitoring the whole Melbourne city
 - I hardcode this harvester to send data to a tomcat7 server at the same host (127.0.0.1:8080). So the web server and this harvester need to be launched at the same server (order independent)
 
 ##WebService
-A web service running in Tomcat server
+A web service running in Tomcat server. It contains two web socket endpoints
 - Install via command: $ cd WebService/ && mvn clean package
 - Launch: Move the packaged web.war file to your the webapp/ folder under your tomcat7 directory. Launch your tomcat, by default the index page can be accessed at http://localhost:8080/web
  
