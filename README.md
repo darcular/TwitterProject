@@ -2,7 +2,7 @@ Distributed Computing Project
 ==============
 
 ##Overview
-This repository contains the source of my Distributed Computing Project (COMP90019) in University of Melbourne. It is a 25 credit points subject. Databased side scripts are not included in this repository.
+This repository contains the source of my Distributed Computing Project (COMP90019) in University of Melbourne. It is a 25 credit points subject. Databased side scripts are not included in this repository. This system is now deployed across three instances in NeCTAR Research Cloud (https://www.nectar.org.au/)
 - Supervisor: Richard Sinnott
 - Author: Yikai Gong  (ID: 600206)  
 - Email: yikaig@student.unimelb.edu.au
