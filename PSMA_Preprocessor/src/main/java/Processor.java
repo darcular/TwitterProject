@@ -39,7 +39,7 @@ public class Processor {
     }
 
     public static void retrieveMainStreetInfo(String file_path, JsonArray roadInfos){
-        InputStream inputStream = Processor.class.getClassLoader().getResourceAsStream(file_path);
+        InputStream inputStream = Processor.class.getResourceAsStream(file_path);
         Scanner scanner = new Scanner(inputStream);
         jsonObject = (JsonObject) new JsonParser().parse(scanner.nextLine());
         JsonArray features = jsonObject.getAsJsonArray("features");

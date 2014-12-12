@@ -16,7 +16,7 @@ public class PSMAReader {
     public PSMAReader(String file_path){
         try {
 //            FileInputStream fileInputStream = new FileInputStream(this.getClass().getResource(file_path).getPath());
-            InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(file_path);
+            InputStream inputStream = this.getClass().getResourceAsStream(file_path);
             Scanner scanner = new Scanner(inputStream);
             jsonObject = (JsonObject) new JsonParser().parse(scanner.nextLine());
         } catch (Exception e) {

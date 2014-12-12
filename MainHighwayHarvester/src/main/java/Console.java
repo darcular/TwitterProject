@@ -32,7 +32,7 @@ public class Console {
 
         //read MainStreetInfo.json and convert into json object
         final int l = 8;
-        InputStream inputStream = Console.class.getClassLoader().getResourceAsStream("MainStreetInfos.json");
+        InputStream inputStream = Console.class.getResourceAsStream("MainStreetInfos.json");
         Scanner scanner = new Scanner(inputStream);
         JsonArray roadInfos = (JsonArray) new JsonParser().parse(scanner.nextLine());
         int totalNumOfRoads = roadInfos.size();
